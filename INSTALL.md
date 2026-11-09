@@ -56,6 +56,10 @@ python -m webapp.glb_export          # SOMA USD -> webapp/static/soma.glb（1.3 
 python -m uvicorn webapp.server:app --host 127.0.0.1 --port 8000
 ```
 
+> `start.bat` 里的 `PYTHON=` 写死的是本机环境路径
+> （`C:\Users\13119\anaconda3\envs\motionbricks\python.exe`）。
+> 换机器时改这一行，或直接用上面的 `python -m uvicorn` 命令启动。
+
 浏览器打开 <http://127.0.0.1:8000>。
 
 ## 5. 浏览器端到端测试（可选）
