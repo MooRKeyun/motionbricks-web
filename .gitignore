@@ -1,0 +1,12 @@
+# Project artefacts
+tests/shots/
+tests/*.npz
+tests/*.log
+webapp/static/soma.glb
+motionbricks/.trt-cache/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/

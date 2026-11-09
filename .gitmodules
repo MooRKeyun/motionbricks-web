@@ -1,0 +1,3 @@
+[submodule "motionbricks"]
+	path = motionbricks
+	url = https://github.com/NVlabs/motionbricks.git
