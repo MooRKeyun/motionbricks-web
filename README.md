@@ -15,6 +15,22 @@
 
 ![走到坐姿](docs/images/walk_to_sit.png)
 
+## 另一个页面：养老设施的一天（`/day`）
+
+在同一个工程里还加了一层研究场景：把一套 72 × 40 m 的养老设施（42 个房间/区域、102 件家具）
+和 12 位居民 + 3 名员工的一天搬进 3D，时间轴可拖动回放。
+**只有状态跃迁的时刻**（落座、起身、相遇、告别、13:20 的胸痛事件）才调用 MotionBricks 生成动作，
+其余时间用地面箭头表示——307 段动作整批生成只要 2.1 秒。
+
+```powershell
+python -m webapp.sim.build     # 从 demo/ 的一天数据生成场景与动作片段
+# 打开 http://127.0.0.1:8000/day
+```
+
+![一天回放](docs/images/day_scene.png)
+
+细节见 [docs/DAY_SCENE.md](docs/DAY_SCENE.md)。
+
 ## 目录结构
 
 ```

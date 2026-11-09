@@ -5,6 +5,10 @@ tests/*.log
 webapp/static/soma.glb
 motionbricks/.trt-cache/
 
+# Generated day data: rebuild with `python -m webapp.sim.build` (clips are 38 MB)
+webapp/sim/data/clips.bin
+webapp/sim/data/clips.json
+
 # Python
 __pycache__/
 *.pyc

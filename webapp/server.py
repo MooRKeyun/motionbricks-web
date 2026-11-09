@@ -14,6 +14,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .motion import MotionService
+from .sim.router import router as day_router
 
 LOGGER = logging.getLogger("webapp.server")
 STATIC_DIR = Path(__file__).resolve().parent / "static"
@@ -56,6 +57,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="MotionBricks Web", lifespan=lifespan)
+app.include_router(day_router)
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 

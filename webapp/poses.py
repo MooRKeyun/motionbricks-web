@@ -51,6 +51,8 @@ POSE_SPECS: tuple[PoseSpec, ...] = (
     PoseSpec("zombie", "僵尸走", "variations/zombie_walk_180_R_003__A330.bvh", 1.0, "travel"),
     PoseSpec("dance", "舞蹈", "variations/dance_vouge_vogue_sequence_180_R_002__A316.bvh", 2.0, "action"),
     PoseSpec("jump", "跃起", "jump/jump_over_obstacle_0_5m_R_001__A415.bvh", 0.9, "action"),
+    # Used by the chest-pain scenario: a hand pressed to the chest, torso bent forward.
+    PoseSpec("grab_chest", "捂胸", "variations/injured_torso_grab_walk_ff_180_001__A549.bvh", 0.55, "action"),
 )
 
 TRAVEL_POSE_KEYS = frozenset(

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>养老设施 · 一天行为回放</title>
+  <link rel="stylesheet" href="/static/day.css" />
+  <script type="importmap">
+    { "imports": { "three": "/static/vendor/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene"></canvas>
+
+  <div id="hud">
+    <header>
+      <div class="brand">
+        <span class="dot"></span>
+        <div>
+          <h1>养老设施 · 一天</h1>
+          <p id="subtitle">06:30 – 21:30 · 12 位居民 · 3 名员工</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span id="badge" class="badge">加载中</span>
+        <a class="ghost-link" href="/">手动补间页</a>
+      </div>
+    </header>
+
+    <aside id="side">
+      <section class="card">
+        <h2>图例</h2>
+        <ul id="legend" class="legend-list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>在场人员</h2>
+        <ul id="agent-list" class="agent-list"></ul>
+      </section>
+
+      <section class="card event-card" id="event-card" hidden>
+        <h2 id="event-title">事件</h2>
+        <p class="muted" id="event-detail"></p>
+        <ol id="event-beats" class="beat-list"></ol>
+      </section>
+
+      <section class="card" id="inspector">
+        <h2>检查器</h2>
+        <p class="muted" id="inspector-empty">点选一个 Agent 查看其当前状态</p>
+        <div id="inspector-body" hidden>
+          <div class="inspector-name"><span id="inspector-chip" class="chip"></span><span id="inspector-name"></span></div>
+          <dl>
+            <div><dt>时间</dt><dd id="inspector-time">—</dd></div>
+            <div><dt>位置</dt><dd id="inspector-zone">—</dd></div>
+            <div><dt>活动</dt><dd id="inspector-activity">—</dd></div>
+            <div><dt>状态</dt><dd id="inspector-state">—</dd></div>
+            <div><dt>下一站</dt><dd id="inspector-next">—</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>显示</h2>
+        <label class="check"><input id="toggle-labels" type="checkbox" checked /> 区域名称</label>
+        <label class="check"><input id="toggle-furniture" type="checkbox" checked /> 家具</label>
+        <label class="check"><input id="toggle-arrows" type="checkbox" checked /> 移动箭头</label>
+        <label class="check"><input id="toggle-clips" type="checkbox" checked /> 动作片段（人物）</label>
+        <label class="check"><input id="toggle-follow" type="checkbox" /> 镜头跟随选中 Agent</label>
+      </section>
+    </aside>
+
+    <footer id="timeline">
+      <button id="play" class="icon-btn" title="播放 / 暂停">▶</button>
+      <span id="clock" class="clock">06:30:00</span>
+      <div class="track">
+        <input id="scrub" type="range" min="0" max="54000" step="1" value="0" />
+        <div id="ticks" class="ticks"></div>
+        <div id="events" class="event-marks"></div>
+      </div>
+      <label class="speed">
+        速度
+        <select id="speed">
+          <option value="1">1×</option>
+          <option value="10">10×</option>
+          <option value="60" selected>60×</option>
+          <option value="240">240×</option>
+          <option value="900">900×</option>
+        </select>
+      </label>
+    </footer>
+  </div>
+
+  <script type="module" src="/static/day.js"></script>
+</body>
+</html>
